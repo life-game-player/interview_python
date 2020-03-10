@@ -1299,10 +1299,11 @@ def get_value(l, r, c):
     return l[r][c]
 
 def find(l, x):
-    m = len(l) - 1
-    n = len(l[0]) - 1
+    m = len(l) - 1  # 最大行下标
+    n = len(l[0]) - 1  #最大列下标
     r = 0
     c = n
+    # 从最右上角开始搜索，始终保持(r,c)为符合条件的矩形(不断缩小)的最右上角
     while c >= 0 and r <= m:
         value = get_value(l, r, c)
         if value == x:
